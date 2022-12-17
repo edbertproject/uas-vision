@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/override.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/mobile.css')}}">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="file-upload-wrapper">
+                        <form method="POST" action="/" enctype="multipart/form-data">
+                            <h4 class="title">Upload your document</h4>
+                            <div class="subtitle">in JPEG, PNG</div>
+                            <div class="d-none">
+                                <input accept="image/*" type="file" id="input-file" name="file">
+                            </div>
+                            <input id="submit-button" type="submit" />
+                            <button type="button" class="btn btn-primary" id="upload-button">Upload</button>
+                        </form>
+                    </div>
+                    
+                    <div class="render-image-container">
+                        {% if rendered_image %}
+                            <div class="render-image-wrapper render">
+                                <img class="render-image" src="{{rendered_image}}" alt="render-image">
+                            </div>
+                        {% else %}
+                            <div class="render-image-wrapper">
+                                <img class="image-placeholder" src="{{url_for('static', filename='images/placeholder.png')}}" alt="render-image">
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <div class="classification-wrapper">
+                        <div class="classification-result-wrapper">
+                            <div class="result-image-wrapper">
+                                <img src="{{url_for('static', filename='images/test.jpg')}}" alt="render-image">
+                            </div>
+                            <div class="accurate-wrapper">
+                                <div>{{ max_alphabet.upper() }}</div>
+                                <div>{{ max_percentage }}%</div>
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: {{ max_percentage }}%" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="result-data-table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                      <th scope="col">No</th>
+                                      <th scope="col">Alphabet</th>
+                                      <th scope="col">Similarity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for percentage in percentages %}
+                                    <tr>
+                                      <th scope="row">{{ loop.index }}</th>
+                                      <td>{{ percentage['alphabet'] }}</td>
+                                      <td>{{ percentage['value'] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+        <script src="{{url_for('static', filename='js/index.js')}}"></script>
+    </body>
+</html>

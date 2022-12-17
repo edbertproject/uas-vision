@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #020202;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.file-upload-wrapper #submit-button {
+    opacity: 0;
+    margin: 0;
+    width: 0;
+    padding: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.file-upload-wrapper {
+    padding: 20px;
+    background-color: #141414;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    box-shadow:
+		0px 16px 24px 2px hsla(0,0%,0%,0.14),
+		0px 6px 30px 5px hsla(0,0%,0%,0.12),
+		0px 8px 10px -5px hsla(0,0%,0%,0.2);
+}
+
+.file-upload-wrapper .btn-primary {
+    width: 100%;
+}
+
+.file-upload-wrapper .title {
+    font-size: 18px;
+}
+
+.file-upload-wrapper .subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+}
+
+/* render image style */
+.render-image-container {
+    margin-top: 20px;
+}
+
+.render-image-container .render-image-wrapper{
+    border: 2px solid white;
+    width: 100%;
+    height: 356px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.render-image-container .render-image-wrapper.render {
+    height: 100%;
+}
+
+.render-image-container .render-image-wrapper .render-image {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.render-image-container .render-image-wrapper .image-placeholder{
+    width: 50%;
+    border-radius: 16px;
+}
+
+/* classification style */
+.classification-result-wrapper {
+    padding: 20px;
+    background-color: #141414;
+    border-radius: 16px;
+    color: white;
+    display: flex;
+    grid-gap: 16px;
+    box-shadow:
+		0px 16px 24px 2px hsla(0,0%,0%,0.14),
+		0px 6px 30px 5px hsla(0,0%,0%,0.12),
+		0px 8px 10px -5px hsla(0,0%,0%,0.2);
+}
+
+.classification-result-wrapper .accurate-wrapper {
+    width: 100%;
+}
+
+.classification-result-wrapper .accurate-wrapper .progress {
+    border-radius: 16px;
+}
+
+.classification-result-wrapper .accurate-wrapper .progress-bar {
+    background-color: #9246FF;
+    border-radius: 16px;
+}
+
+.classification-result-wrapper .result-image-wrapper{
+    max-width: 16%;
+}
+
+.classification-result-wrapper .result-image-wrapper img{
+    width: 100%;
+    border-radius: 16px;
+}
+
+.classification-result-wrapper .accurate-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.classification-wrapper .result-data-table-wrapper {
+    margin-top: 16px;
+    max-height: 356px;
+    overflow-y: auto;
+}
+
+.classification-wrapper .result-data-table-wrapper .table {
+    color: white;
+}

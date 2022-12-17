@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    body {
+        height: 100%;
+    }
+
+    .render-image-container .render-image-wrapper {
+        margin: 40px auto;
+        width: 100%;
+    }
+
+    .classification-result-wrapper {
+        margin-bottom: 40px;
+    }
+}

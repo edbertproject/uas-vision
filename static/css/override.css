@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: white;
+}
+
+.btn-primary {
+    background-color: #9246FF;
+    outline: none;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 10px;
+    transition: all .25s;
+}
+
+.btn-primary:hover {
+    background-color: #6414DA;
+}
