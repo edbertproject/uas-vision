@@ -2,18 +2,17 @@ import os
 import json
 from Methods import read_image_percentage
 
-# alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-alphabets = ['a', 'b']
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 dicts = {}
-for alphabet in alphabets:
-    all_files = os.listdir("alphabets/" + alphabet)
+for number in numbers:
+    all_files = os.listdir("numbers/" + number)
 
     percentages = []
     for all_file in all_files:
-        percentages.append(read_image_percentage("alphabets/" + alphabet + "/" + all_file))
+        percentages.append(read_image_percentage("numbers/" + number + "/" + all_file))
 
-    dicts[alphabet] = percentages
+    dicts[number] = percentages
 
-with open('alphabets.json', 'w') as fp:
+with open('numbers.json', 'w') as fp:
     json.dump(dicts, fp)

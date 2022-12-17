@@ -48,7 +48,7 @@
                                 <img src="{{url_for('static', filename='images/test.jpg')}}" alt="render-image">
                             </div>
                             <div class="accurate-wrapper">
-                                <div>{{ max_alphabet.upper() }}</div>
+                                <div>{{ max_number.upper() }}</div>
                                 <div>{{ max_percentage }}%</div>
                                 <div class="progress">
                                   <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: {{ max_percentage }}%" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
@@ -69,7 +69,7 @@
                                     {% for percentage in percentages %}
                                     <tr>
                                       <th scope="row">{{ loop.index }}</th>
-                                      <td>{{ percentage['alphabet'] }}</td>
+                                      <td>{{ percentage['number'] }}</td>
                                       <td>{{ percentage['value'] }}</td>
                                     </tr>
                                     {% endfor %}
