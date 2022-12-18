@@ -48,11 +48,13 @@
                                 <img src="{{url_for('static', filename='images/test.jpg')}}" alt="render-image">
                             </div>
                             <div class="accurate-wrapper">
-                                <div>{{ max_number.upper() }}</div>
-                                <div>{{ max_percentage }}%</div>
-                                <div class="progress">
-                                  <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: {{ max_percentage }}%" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                                {% if max_number %}
+                                    <div>{{ max_number.upper() }}</div>
+                                    <div>{{ max_percentage }}%</div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: {{ max_percentage }}%" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
 

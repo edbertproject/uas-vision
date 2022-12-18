@@ -34,6 +34,8 @@ def compare_percentage(image_path):
             "value": max(percent),
         })
 
+    print(percents)
+
     max_number, max_percentage = get_max_percentage(percents)
 
     return max_number, max_percentage, percents
