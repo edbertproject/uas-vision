@@ -1,2 +1,4 @@
 ./static/upload/*
 .idea
+
+./__pychache__/*
