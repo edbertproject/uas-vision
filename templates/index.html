@@ -44,13 +44,10 @@
                 <div class="col-md-8 col-sm-12">
                     <div class="classification-wrapper">
                         <div class="classification-result-wrapper">
-                            <div class="result-image-wrapper">
-                                <img src="{{url_for('static', filename='images/test.jpg')}}" alt="render-image">
-                            </div>
                             <div class="accurate-wrapper">
                                 {% if max_number %}
-                                    <div>{{ max_number.upper() }}</div>
-                                    <div>{{ max_percentage }}%</div>
+                                    <div>Guess Number: {{ max_number.upper() }}</div>
+                                    <div>Similarity: {{ max_percentage }}%</div>
                                     <div class="progress">
                                       <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: {{ max_percentage }}%" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
@@ -70,7 +67,7 @@
                                     {% for percentage in percentages %}
                                     <tr>
                                       <td>{{ percentage['number'] }}</td>
-                                      <td>{{ percentage['value'] }}</td>
+                                      <td>{{ percentage['value'] }}%</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
