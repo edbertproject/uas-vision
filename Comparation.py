@@ -27,7 +27,7 @@ def compare_percentage(image_path):
         for image in numbers[number]:
             master_sum = sum(image)
             dev = master_sum - input_sum
-            percent.append(round(((master_sum - abs(dev)) / master_sum) * 100))
+            percent.append(round(((master_sum - abs(dev)) / master_sum) * 100, 3))
 
         percents.append({
             "number": number,

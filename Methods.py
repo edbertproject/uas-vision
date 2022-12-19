@@ -96,7 +96,7 @@ def image_slice_to_percentage(img, image_slices):
         curr = img[slice['startpoint_x']: slice['endpoint_x'], slice['startpoint_y']: slice['endpoint_y']]
         result = compare_percentage_bw(curr)
         ratio = (result[0] / result[1]) * 100
-        percentages.append(int(ratio))
+        percentages.append(round(ratio, 3))
     return percentages
 
 
